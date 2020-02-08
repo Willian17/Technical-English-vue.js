@@ -1,0 +1,92 @@
+@font-face{
+    font-family: 'Nunito-Bold';
+    src: url('../fonts/Nunito-Bold.ttf');
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+html , body{
+    height: 100%;
+    min-height: 100%;
+}
+body{
+    font-size: 25px;
+    font-family: 'Nunito-Bold';
+    background: linear-gradient(to right, #00467f, #a5cc82);
+}
+
+
+#app{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) ;
+    padding: 15px;
+    text-align: center;
+    
+    border-radius: 10px;
+    height: 480px;
+    width: 600px;
+    background: #BFF0D4; 
+}
+
+#app:hover{
+    background: #B8E2C8;
+}
+
+#app h1 , .conteudo p{
+   color: #44CCFF;
+   margin: 20px;
+}
+
+#app .conteudo{
+    margin-top: 100px;
+}
+strong{
+   color: rgb(236, 42, 12)
+}
+#app strong#quest{
+    color: #E26D5A;
+}
+#app strong#quest:hover{
+    color: rgb(236, 42, 12) ;
+}
+input{
+    height: 62px;
+    padding: 0 35px 0 35px;
+    width: 300px;
+    border: none;
+     outline: none; /*tirar o azuzinho selecionado */
+    color: #8f8fa1;
+    border-radius: 40px;
+    font-family: "Nunito-Bold";
+    font-size: 16px;
+}
+
+div .butoes{
+    margin: 20px;
+}
+button{
+    border: none;
+    padding: 10px;
+    width: 100px;
+    color: white;
+    background: #3185FC;
+    border-radius: 15px;
+    outline: none;
+}
+button:hover{
+    background: #44CCFF;
+}
+
+#acertou{
+    color: #4E6B00;
+    font-weight: bold;
+}
+
+#errou{
+    color: #E26D5A ;
+}
+

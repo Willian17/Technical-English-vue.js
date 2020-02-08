@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ingles tecnico</title>
+    <script src="js/vue.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <div id="app">
+        <h1>Inglês na programação</h1>
+        <div class="conteudo">
+            <p> O que significa <strong id="quest"> {{questao[indice].pergunta}}</strong> ? </p>
+            <input type="text" placeholder="Resposta" v-model="resposta" required>
+        </div>
+        <div class="butoes">
+            <button @click="trocarQuestao">Trocar</button>
+            <button @click="verificarResposta">Enviar</button>
+        </div>
+        <div>
+            <span v-if="acertou == 'acertou'" id="acertou"> Parabéns você acertou!!! </span>
+            <span v-else-if="acertou == 'errou'" id="errou">Infelizmente você errou!, resposta certa =
+                <strong>{{questao[indice].resposta}}</strong> </span>
+        </div>
+    </div>
+
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                questao: [],
+                indice: 0,
+                resposta: '',
+                acertou: null,
+                qtde: 0,
+            },
+            methods: {
+                getPergunta_resp() {
+                    fetch('/data/perguntas.json')
+                        .then(resp => resp.json())
+                        .then(dados => {
+                            this.questao = dados
+                            this.qtde = dados.length
+                        })
+
+                },
+                trocarQuestao() {
+                    this.indice = parseInt(Math.random() * this.qtde)
+                    this.acertou = null
+                    this.resposta = ''
+                },
+                verificarResposta() {
+                    if (this.questao[this.indice].resposta == this.resposta.toLowerCase()) {
+                        this.acertou = 'acertou'
+                    } else {
+                        this.acertou = 'errou'
+                    }
+                }
+            },
+            mounted() {
+                this.getPergunta_resp()
+                this.indice = parseInt(Math.random() * 60)
+            }
+        })
+    </script>
+</body>
+
+</html>
