@@ -18,7 +18,7 @@ Deixando a sintaxe das linguagens de programação mais claro e de melhor compre
 ## Tecnologias
 ```
 Usando vue.js, eu recebo um arquivo json com (o termo em inglês, e a tradução para o português
-do Brasil), e faço a verificaçãose a tradução é igual ao input text, caso seja, é emitido uma
+do Brasil), e faço a verificação se a tradução é igual ao input text, caso seja, é emitido uma
 mensagem "Parabéns você acertou", caso contrário é emitido o aviso do erro, com a tradução 
 correta. E é possível gerar termos randomicamente.
 ```
